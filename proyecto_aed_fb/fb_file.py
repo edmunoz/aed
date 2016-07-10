@@ -19,8 +19,8 @@ def get_cursor(connect):
 
 def insert_post():
     insert_info = ("INSERT INTO post "
-                   "(created_time, icon, id, link, message, multi_share_optimized, name, picture)"
-                   "VALUES (%s, %s, %s, %s, %s, %s, %s, %s)")
+                   "(id, message, picture, link, name, caption, description, icon, type, status_type, created_time, updated_time, shares)"
+                   "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)")
     return insert_info
 
 def insert_post_from():
@@ -52,14 +52,14 @@ def printAllComments(comments, next_url, connection, id_post):
     if next_url == '':
         data_comments = comments['data']
         for comment in data_comments:
-            can_remove = comment['can_remove']
-            created_time = comment['created_time']
-            id = comment['id']
-            like_count = comment['like_count']
-            message = comment['message']
-            user_likes = comment['user_likes']
-            from_id = comment['from']['id']
-            from_name = comment['from']['name']
+            can_remove = getValue(comment, 'can_remove', None)
+            created_time = getValue(comment, 'created_time', None)
+            id = getValue(comment, 'id', None)
+            like_count = getValue(comment, 'like_count', None)
+            message = getValue(comment, 'message', None)
+            user_likes = getValue(comment, 'user_likes', None)
+            from_id = getValue(comment, 'from', 'id')
+            from_name = getValue(comment, 'from', 'name')
             data_comment = (id_post, can_remove, created_time, id, like_count, message, user_likes)
             cursor.execute(insert_comment(), data_comment)
             data_comment_from = (cursor.lastrowid, from_id, from_name)
@@ -73,14 +73,14 @@ def printAllComments(comments, next_url, connection, id_post):
         data_comments = response_data['data']
         try:
             for comment in data_comments:
-                can_remove = comment['can_remove']
-                created_time = comment['created_time']
-                id = comment['id']
-                like_count = comment['like_count']
-                message = comment['message']
-                user_likes = comment['user_likes']
-                from_id = comment['from']['id']
-                from_name = comment['from']['name']
+                can_remove = getValue(comment, 'can_remove', None)
+                created_time = getValue(comment, 'created_time', None)
+                id = getValue(comment, 'id', None)
+                like_count = getValue(comment, 'like_count', None)
+                message = getValue(comment, 'message', None)
+                user_likes = getValue(comment, 'user_likes', None)
+                from_id = getValue(comment, 'from', 'id')
+                from_name = getValue(comment, 'from', 'name')
                 data_comment = (id_post, can_remove, created_time, id, like_count, message, user_likes)
                 cursor.execute(insert_comment(), data_comment)
                 data_comment_from = (cursor.lastrowid, from_id, from_name)
@@ -96,8 +96,8 @@ def extract_data_like_post(likes, next_url, connection, id_post):
     if next_url == '':
         data_likes = likes['data']
         for like in data_likes:
-            id = like['id']
-            name = like['name']
+            id = getValue(like, 'id', None)
+            name = getValue(like, 'name', None)
             data_like = (id_post, id, name)
             cursor.execute(insert_post_like(), data_like)
             connection.commit()
@@ -109,13 +109,105 @@ def extract_data_like_post(likes, next_url, connection, id_post):
         data_likes = response_data['data']
         try:
             for like in data_likes:
-                id = like['id']
-                name = like['name']
+                id = getValue(like, 'id', None)
+                name = getValue(like, 'name', None)
                 data_like = (id_post, id, name)
                 cursor.execute(insert_post_like(), data_like)
                 connection.commit()
             url = response_data['paging']['next']
             extract_data_like_post('', url, connection, id_post)
+        except Exception:
+            return 1
+
+def read_all_post(posts, next_url, connection):
+    cursor = get_cursor(connection)
+    if next_url == '':
+        data_posts = posts['data']
+        for post in data_posts:
+            #post
+            id = getValue(post, 'id', '')
+            message = getValue(post, 'message', '')
+            picture = getValue(post, 'picture', '')
+            link = getValue(post, 'link', '')
+            name = getValue(post, 'name', '')
+            caption = getValue(post, 'caption', '')
+            description = getValue(post, 'description', '')
+            icon = getValue(post, 'icon', '')
+            type = getValue(post, 'type', '')
+            status_type = getValue(post, 'status_type', '')
+            created_time = getValue(post, 'created_time', '')
+            updated_time = getValue(post, 'updated_time', '')
+            shares = getValue(post, 'shares', 'count')
+            data_post = (id, message, picture, link, name, caption, description, icon, type, status_type, created_time, updated_time, shares)
+            try:
+                cursor.execute(insert_post(), data_post)
+                id_post = cursor.lastrowid
+            except Error as error:
+                print(error)
+            #post_from
+            from_category = getValue(post, 'from', 'category')
+            from_id = getValue(post, 'from', 'id')
+            from_name = getValue(post, 'from', 'name')
+            data_from = (id_post, from_category, from_id, from_name)
+            try:
+                cursor.execute(insert_post_from(), data_from)
+                connection.commit()
+            except Error as error:
+                print(error)
+            # comment
+            comments = getValue(post, 'comments', '')
+            # post_like
+            likes = getValue(post, 'likes', '')
+            result1 = extract_data_like_post(likes, '', connection, id_post)
+            result2 = printAllComments(comments, '', connection, id_post)
+        url = posts['paging']['next']
+        read_all_post(None, url, connection)
+    else:
+        response = urllib2.urlopen(next_url)
+        response_data = json.loads(response.read())
+        data_posts = response_data['data']
+        try:
+            for post in data_posts:
+                # post
+                id = getValue(post, 'id', '')
+                message = getValue(post, 'message', '')
+                picture = getValue(post, 'picture', '')
+                link = getValue(post, 'link', '')
+                name = getValue(post, 'name', '')
+                caption = getValue(post, 'caption', '')
+                description = getValue(post, 'description', '')
+                icon = getValue(post, 'icon', '')
+                type = getValue(post, 'type', '')
+                status_type = getValue(post, 'status_type', '')
+                created_time = getValue(post, 'created_time', '')
+                updated_time = getValue(post, 'updated_time', '')
+                shares = getValue(post, 'shares', 'count')
+                data_post = (
+                id, message, picture, link, name, caption, description, icon, type, status_type, created_time,
+                updated_time, shares)
+                try:
+                    cursor.execute(insert_post(), data_post)
+                    id_post = cursor.lastrowid
+                except Error as error:
+                    print(error)
+                # post_from
+                from_category = getValue(post, 'from', 'category')
+                from_id = getValue(post, 'from', 'id')
+                from_name = getValue(post, 'from', 'name')
+                data_from = (id_post, from_category, from_id, from_name)
+                try:
+                    cursor.execute(insert_post_from(), data_from)
+                    connection.commit()
+                except Error as error:
+                    print(error)
+                # comment
+                comments = getValue(post, 'comments', '')
+                # post_like
+                likes = getValue(post, 'likes', '')
+                result1 = extract_data_like_post(likes, '', connection, id_post)
+                result2 = printAllComments(comments, '', connection, id_post)
+            url = response_data['paging']['next']
+            read_all_post(None, url, connection)
         except Exception:
             return 1
 
@@ -131,44 +223,24 @@ def render_to_json(graph_url):
     json_data = json.loads(readable_page)
     return json_data
 
-if __name__ == "__main__":
-    accessToken = 'EAACEdEose0cBALLFRZCWeL8iCovlurXAHVO61e2LnQDebAaSRxNgAWznMxg94ZCmUe6Hct63dlLZCtdM0HjNtYkXVat6cm8tVvNHffjGFSkg99TFHkpKjNFyrMmbZAP2XgamtdCp1ZCusocDEdUS7ZBXA0asQALEN9WFUv0QtN3gZDZD'
-    graph = facebook.GraphAPI(access_token=accessToken, version='2.2')
-    post = graph.get_object(id='790489781052943')
-    created_time = post['created_time']
-    icon = post['icon']
-    id = post['id']
-    link = post['link']
-    message = post['message']
-    multi_share_optimized = post['multi_share_optimized']
-    name = post['name']
-    picture = post['picture']
-    from_category = post['from']['category']
-    from_id = post['from']['id']
-    from_name = post['from']['name']
-    comments = post['comments']
-    likes = post['likes']
-    #create db connection
-    connection = connect_db()
-    # insert the data we pulled into db
-    cursor = get_cursor(connection)
-    data_post = (created_time, icon, id, link, message, multi_share_optimized, name, picture)
-
-    #data_like = (created_time, icon, id, link, message, multi_share_optimized, name, picture)
+def getValue(data, attribute1, attribute2):
+    value = ''
     try:
-        cursor.execute(insert_post(), data_post)
-        id_post = cursor.lastrowid
-        data_from = (id_post, from_category, from_id, from_name)
-        cursor.execute(insert_post_from(), data_from)
-        #cursor.execute(insert_post_like(), data_like)
-    except Error as error:
-        print(error)
-    # commit the data to the db
-    connection.commit()
-    result1 = extract_data_like_post(likes, '', connection, id_post)
-    print "Termino de extraer los likes del post"
-    result1 = printAllComments(comments, '', connection, id_post)
-    print "Termino de extraer los comments del post"
+        if(attribute2 == ''):
+            value = data[attribute1]
+        else:
+            value = data[attribute1][attribute2]
+    except:
+        return value
+    return value
+
+if __name__ == "__main__":
+    accessToken = 'EAACEdEose0cBAPHe6ZAqZC40U5zLj6fGpX65NPwMnbo5lgxZBT1AJEtjWhKTJa6Ri7HNVNwDiC1LoajjGMVdTB3JZCmNPMvKtYKtZCTwP9Y4GUNsF8iPZBX0KZAo6D4nzdnK2IQUWBvrZCjn2Bdkr35w0uRcLdKkyBdD5P9LOxjoQQZDZD'
+    graph_url = "https://graph.facebook.com/2016CopaAmericaCentenario/posts?access_token=" + accessToken
+    posts = render_to_json(graph_url)
+    connection = connect_db()
+    read_all_post(posts, '', connection)
+
 
 
 
@@ -177,4 +249,3 @@ if __name__ == "__main__":
 
 
 #https://graph.facebook.com/cocacolaec/posts?access_token=id
-
