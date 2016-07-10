@@ -3,14 +3,19 @@
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `post` (
   `id_post` BIGINT NOT NULL AUTO_INCREMENT,
-  `created_time` VARCHAR(100) NULL,
-  `icon` VARCHAR(100) NULL,
   `id` VARCHAR(100) NULL,
-  `link` VARCHAR(1000) NULL,
-  `message` VARCHAR(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
-  `multi_share_optimized` TINYINT(1) NULL,
-  `name` VARCHAR(1000) NULL,
+  `message` MEDIUMTEXT NULL,
   `picture` VARCHAR(1000) NULL,
+  `link` VARCHAR(1000) NULL,
+  `name` VARCHAR(1000) NULL,
+  `caption` VARCHAR(100) NULL,
+  `description` VARCHAR(500) NULL,
+  `icon` VARCHAR(100) NULL,
+  `type` VARCHAR(100) NULL,
+  `status_type` VARCHAR(100) NULL,
+  `created_time` VARCHAR(100) NULL COMMENT 'Fecha de creación',
+  `updated_time` VARCHAR(100) NULL COMMENT 'Fecha de actualización',
+  `shares` VARCHAR(100) NULL COMMENT 'Numero de veces que se compartio el post',
   PRIMARY KEY (`id_post`))
 ENGINE = InnoDB;
 
@@ -62,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `created_time` VARCHAR(100) NULL,
   `id` VARCHAR(100) NULL,
   `like_count` BIGINT NULL,
-  `message` VARCHAR(2000) NULL,
+  `message` MEDIUMTEXT NULL,
   `user_likes` TINYINT(1) NULL,
   PRIMARY KEY (`id_comment`),
   INDEX `fk_comment_post1_idx` (`id_post` ASC),
