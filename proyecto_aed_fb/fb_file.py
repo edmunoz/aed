@@ -52,12 +52,12 @@ def printAllComments(comments, next_url, connection, id_post):
     if next_url == '':
         data_comments = comments['data']
         for comment in data_comments:
-            can_remove = getValue(comment, 'can_remove', None)
-            created_time = getValue(comment, 'created_time', None)
-            id = getValue(comment, 'id', None)
-            like_count = getValue(comment, 'like_count', None)
-            message = getValue(comment, 'message', None)
-            user_likes = getValue(comment, 'user_likes', None)
+            can_remove = getValue(comment, 'can_remove', '')
+            created_time = getValue(comment, 'created_time', '')
+            id = getValue(comment, 'id', '')
+            like_count = getValue(comment, 'like_count', '')
+            message = getValue(comment, 'message', '')
+            user_likes = getValue(comment, 'user_likes', '')
             from_id = getValue(comment, 'from', 'id')
             from_name = getValue(comment, 'from', 'name')
             data_comment = (id_post, can_remove, created_time, id, like_count, message, user_likes)
@@ -65,20 +65,23 @@ def printAllComments(comments, next_url, connection, id_post):
             data_comment_from = (cursor.lastrowid, from_id, from_name)
             cursor.execute(insert_comment_from(), data_comment_from)
             connection.commit()
-        url = comments['paging']['next']
-        printAllComments('', url, connection, id_post)
+        url = getValue(comments, 'paging', 'next')
+        if url != '':
+            printAllComments('', url, connection, id_post)
+        else:
+            return 1
     else:
         response = urllib2.urlopen(next_url)
         response_data = json.loads(response.read())
         data_comments = response_data['data']
         try:
             for comment in data_comments:
-                can_remove = getValue(comment, 'can_remove', None)
-                created_time = getValue(comment, 'created_time', None)
-                id = getValue(comment, 'id', None)
-                like_count = getValue(comment, 'like_count', None)
-                message = getValue(comment, 'message', None)
-                user_likes = getValue(comment, 'user_likes', None)
+                can_remove = getValue(comment, 'can_remove', '')
+                created_time = getValue(comment, 'created_time', '')
+                id = getValue(comment, 'id', '')
+                like_count = getValue(comment, 'like_count', '')
+                message = getValue(comment, 'message', '')
+                user_likes = getValue(comment, 'user_likes', '')
                 from_id = getValue(comment, 'from', 'id')
                 from_name = getValue(comment, 'from', 'name')
                 data_comment = (id_post, can_remove, created_time, id, like_count, message, user_likes)
@@ -86,8 +89,11 @@ def printAllComments(comments, next_url, connection, id_post):
                 data_comment_from = (cursor.lastrowid, from_id, from_name)
                 cursor.execute(insert_comment_from(), data_comment_from)
                 connection.commit()
-            url = response_data['paging']['next']
-            printAllComments('', url, connection, id_post)
+            url = getValue(response_data, 'paging', 'next')
+            if url != '':
+                printAllComments('', url, connection, id_post)
+            else:
+                return 1
         except Exception:
             return 1
 
@@ -96,26 +102,32 @@ def extract_data_like_post(likes, next_url, connection, id_post):
     if next_url == '':
         data_likes = likes['data']
         for like in data_likes:
-            id = getValue(like, 'id', None)
-            name = getValue(like, 'name', None)
+            id = getValue(like, 'id', '')
+            name = getValue(like, 'name', '')
             data_like = (id_post, id, name)
             cursor.execute(insert_post_like(), data_like)
             connection.commit()
-        url = likes['paging']['next']
-        extract_data_like_post('', url, connection, id_post)
+        url = getValue(likes, 'paging', 'next')
+        if url != '':
+            extract_data_like_post('', url, connection, id_post)
+        else:
+            return 1
     else:
         response = urllib2.urlopen(next_url)
         response_data = json.loads(response.read())
-        data_likes = response_data['data']
+        data_likes = getValue(response_data, 'data', '')
         try:
             for like in data_likes:
-                id = getValue(like, 'id', None)
-                name = getValue(like, 'name', None)
+                id = getValue(like, 'id', '')
+                name = getValue(like, 'name', '')
                 data_like = (id_post, id, name)
                 cursor.execute(insert_post_like(), data_like)
                 connection.commit()
-            url = response_data['paging']['next']
-            extract_data_like_post('', url, connection, id_post)
+            url = getValue(response_data, 'paging', 'next')
+            if url != '':
+                extract_data_like_post('', url, connection, id_post)
+            else:
+                return 1
         except Exception:
             return 1
 
@@ -160,8 +172,11 @@ def read_all_post(posts, next_url, connection):
             likes = getValue(post, 'likes', '')
             result1 = extract_data_like_post(likes, '', connection, id_post)
             result2 = printAllComments(comments, '', connection, id_post)
-        url = posts['paging']['next']
-        read_all_post(None, url, connection)
+        url = getValue(posts, 'paging', 'next')
+        if url != '':
+            read_all_post('', url, connection)
+        else:
+            return 1
     else:
         response = urllib2.urlopen(next_url)
         response_data = json.loads(response.read())
@@ -206,8 +221,11 @@ def read_all_post(posts, next_url, connection):
                 likes = getValue(post, 'likes', '')
                 result1 = extract_data_like_post(likes, '', connection, id_post)
                 result2 = printAllComments(comments, '', connection, id_post)
-            url = response_data['paging']['next']
-            read_all_post(None, url, connection)
+            url = getValue(response_data, 'paging', 'next')
+            if url != '':
+                read_all_post('', url, connection)
+            else:
+                return 1
         except Exception:
             return 1
 
@@ -235,7 +253,7 @@ def getValue(data, attribute1, attribute2):
     return value
 
 if __name__ == "__main__":
-    accessToken = 'EAACEdEose0cBAPHe6ZAqZC40U5zLj6fGpX65NPwMnbo5lgxZBT1AJEtjWhKTJa6Ri7HNVNwDiC1LoajjGMVdTB3JZCmNPMvKtYKtZCTwP9Y4GUNsF8iPZBX0KZAo6D4nzdnK2IQUWBvrZCjn2Bdkr35w0uRcLdKkyBdD5P9LOxjoQQZDZD'
+    accessToken = 'EAACEdEose0cBAC1gQRzA8hkVZCSl1w4EptBsdm8zLZAAl0xdRiu1xvNsW4GcWtb9eDoz0tlYcYsxNEJRdwUxg5ZCpFPSZAxVTzIWIhLa3RZBLKkgHVShe2uJs8mRnYyxMgDEwxyO3crC9aDv984xiOhn0ZBIgeyGtaacKgv1auIAZDZD'
     graph_url = "https://graph.facebook.com/2016CopaAmericaCentenario/posts?access_token=" + accessToken
     posts = render_to_json(graph_url)
     connection = connect_db()
