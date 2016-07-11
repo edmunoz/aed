@@ -19,12 +19,20 @@ dfLike_complete = pd.read_sql(query_like, con= mysql_cn)
 dfComment_complete = pd.read_sql(query_comment, con= mysql_cn)
 mysql_cn.close()
 
-dfPost_complete['day'] = dfPost_complete.apply(lambda x:strftime('%d', strptime(x['created_time'],'%Y-%m-%dT%H:%M:%S+0000')),axis=1)
-dfPost_complete['month'] = dfPost_complete.apply(lambda x:strftime('%m', strptime(x['created_time'],'%Y-%m-%dT%H:%M:%S+0000')),axis=1)
-dfPost_complete['hour']= dfPost_complete.apply(lambda x:strftime('%H', strptime(x['created_time'],'%Y-%m-%dT%H:%M:%S+0000')),axis=1)
-dfPost_complete['minute']= dfPost_complete.apply(lambda x:int(strftime('%M', strptime(x['updated_time'],'%Y-%m-%dT%H:%M:%S+0000')))//10*10+10,axis=1)
-dfPost_complete['date'] = dfPost_complete.apply(lambda x:strftime('%Y-%m-%d', strptime(x['created_time'],'%Y-%m-%dT%H:%M:%S+0000')),axis=1)
-dfPost_complete['time']=dfPost_complete.apply(lambda x:str(x['hour'])+":"+str(x['minute']),axis=1)
+dfPost_complete.to_csv('postFile', sep='\t')
+dfLike_complete.to_csv('likeFile', sep='\t')
+dfComment_complete.to_csv('commentFile', sep='\t')
+
+
+
+
+
+# dfPost_complete['day'] = dfPost_complete.apply(lambda x:strftime('%d', strptime(x['created_time'],'%Y-%m-%dT%H:%M:%S+0000')),axis=1)
+# dfPost_complete['month'] = dfPost_complete.apply(lambda x:strftime('%m', strptime(x['created_time'],'%Y-%m-%dT%H:%M:%S+0000')),axis=1)
+# dfPost_complete['hour']= dfPost_complete.apply(lambda x:strftime('%H', strptime(x['created_time'],'%Y-%m-%dT%H:%M:%S+0000')),axis=1)
+# dfPost_complete['minute']= dfPost_complete.apply(lambda x:int(strftime('%M', strptime(x['updated_time'],'%Y-%m-%dT%H:%M:%S+0000')))//10*10+10,axis=1)
+# dfPost_complete['date'] = dfPost_complete.apply(lambda x:strftime('%Y-%m-%d', strptime(x['created_time'],'%Y-%m-%dT%H:%M:%S+0000')),axis=1)
+# dfPost_complete['time']=dfPost_complete.apply(lambda x:str(x['hour'])+":"+str(x['minute']),axis=1)
 # df = dfPost_complete.groupby([['day','time']])
 # print df
 # df['time'] = dfPost_complete['time']
@@ -40,7 +48,7 @@ dfPost_complete['time']=dfPost_complete.apply(lambda x:str(x['hour'])+":"+str(x[
 # print postsByDay
 
 
-dfPivote = dfPost_complete[['created_time','id_post']]
+# dfPivote = dfPost_complete[['created_time','id_post']]
 # print dfPivote.head()
 
 # dfLike = dfLike_complete.groupby(['id_post']).count()
@@ -50,49 +58,49 @@ dfPivote = dfPost_complete[['created_time','id_post']]
 # frames =[dfPivote, dfLike, dfComment]
 # result = pd.concat(frames)
 # print result.head()
-hour=["00:30",
-"00:40",
-"00:50",
-"01:50",
-"01:60",
-"02:10",
-"02:20",
-"02:30",
-"02:40",
-"02:50",
-"02:60",
-"03:10",
-"03:20",
-"03:30",
-"03:40",
-"03:50",
-"03:60"]
+# hour=["00:30",
+# "00:40",
+# "00:50",
+# "01:50",
+# "01:60",
+# "02:10",
+# "02:20",
+# "02:30",
+# "02:40", 
+# "02:50",
+# "02:60",
+# "03:10",
+# "03:20",
+# "03:30",
+# "03:40",
+# "03:50",
+# "03:60"]
 
 
-frec=[2,
-1,
-1,
-1,
-2,
-1,
-1,
-2,
-3,
-4,
-3,
-2,
-2,
-1,
-0,
-0,
-0]
+# frec=[2,
+# 1,
+# 1,
+# 1,
+# 2,
+# 1,
+# 1,
+# 2,
+# 3,
+# 4,
+# 3,
+# 2,
+# 2,
+# 1,
+# 0,
+# 0,
+# 0]
 
-x=range(0,17)
-plt.xticks(x, hour,rotation='vertical')
-plt.plot(x, frec)
-#df.groupby(['time']).count()['userID'].plot(kind="line")
-plt.ylabel('Post Frecuency')
-plt.xlabel('Time')
-plt.title('Argentina vs Chile')
-plt.plot(x,frec)
-plt.show()
+# x=range(0,17)
+# plt.xticks(x, hour,rotation='vertical')
+# plt.plot(x, frec)
+# #df.groupby(['time']).count()['userID'].plot(kind="line")
+# plt.ylabel('Post Frecuency')
+# plt.xlabel('Time')
+# plt.title('Argentina vs Chile')
+# plt.plot(x,frec)
+# plt.show()
