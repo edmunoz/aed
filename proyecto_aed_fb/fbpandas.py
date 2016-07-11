@@ -6,25 +6,26 @@ import MySQLdb as mdb
 from mysql.connector import Error
 from time import gmtime, strftime, strptime
 
-server = '108.167.133.34'
-db = ''
+# server = '108.167.133.34'
+# db = ''
 
-mysql_cn = mdb.connect(host='108.167.133.34', port=3306,user='connie_usr_aed',passwd='SK5CTTs8zXV9',db='connie_facebook')
+# mysql_cn = mdb.connect(host='108.167.133.34', port=3306,user='connie_usr_aed',passwd='SK5CTTs8zXV9',db='connie_facebook')
 
-query_post = "select * from post where created_time like '2016-06-26%';"
-query_like = 'select * from post_like;'
-query_comment = 'select * from comment;' 
-dfPost_complete = pd.read_sql(query_post, con= mysql_cn)
-dfLike_complete = pd.read_sql(query_like, con= mysql_cn)
-dfComment_complete = pd.read_sql(query_comment, con= mysql_cn)
-mysql_cn.close()
+# query_post = "select * from post where created_time like '2016-06-26%';"
+# query_like = 'select * from post_like;'
+# query_comment = 'select * from comment;' 
+# dfPost_complete = pd.read_sql(query_post, con= mysql_cn)
+# dfLike_complete = pd.read_sql(query_like, con= mysql_cn)
+# dfComment_complete = pd.read_sql(query_comment, con= mysql_cn)
+# mysql_cn.close()
 
-dfPost_complete.to_csv('postFile', sep='\t')
-dfLike_complete.to_csv('likeFile', sep='\t')
-dfComment_complete.to_csv('commentFile', sep='\t')
+# dfPost_complete.to_csv('postFile.csv')
+# dfLike_complete.to_csv('likeFile.csv')
+# dfComment_complete.to_csv('commentFile.csv')
 
+dfPost_complete = pd.read_csv('postFile.csv')
 
-
+print dfPost_complete
 
 
 # dfPost_complete['day'] = dfPost_complete.apply(lambda x:strftime('%d', strptime(x['created_time'],'%Y-%m-%dT%H:%M:%S+0000')),axis=1)
