@@ -18,9 +18,11 @@ def get_cursor(connect):
     return cursor
 
 def insert_post():
-    insert_info = ("INSERT INTO post "
-                   "(id, message, picture, link, name, caption, description, icon, type, status_type, created_time, updated_time, shares)"
-                   "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)")
+    # insert_info = ("INSERT INTO post "
+    #                "(id, message, picture, link, name, caption, description, icon, type, status_type, created_time, updated_time, shares)"
+    #                "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)")
+    insert_info = ()
+
     return insert_info
 
 def insert_post_from():
@@ -253,7 +255,7 @@ def getValue(data, attribute1, attribute2):
     return value
 
 if __name__ == "__main__":
-    accessToken = 'EAACEdEose0cBAC1gQRzA8hkVZCSl1w4EptBsdm8zLZAAl0xdRiu1xvNsW4GcWtb9eDoz0tlYcYsxNEJRdwUxg5ZCpFPSZAxVTzIWIhLa3RZBLKkgHVShe2uJs8mRnYyxMgDEwxyO3crC9aDv984xiOhn0ZBIgeyGtaacKgv1auIAZDZD'
+    accessToken = 'EAACEdEose0cBAA0R80KhUdDMNww40uAenH9uEnyoSknK6GPYH81Jb48xZCN7hKyUesqQZCBDAa0p9lDwCyZCioNCcHy4RrqoPNLEkV6hSIkOYyFqhzNcZC1rTmLvmyfMRMB2OtZBzgpndZAJrEHRWcT3DA43ZCuyOwkwXBSZAxsLjAZDZD'
     graph_url = "https://graph.facebook.com/2016CopaAmericaCentenario/posts?access_token=" + accessToken
     posts = render_to_json(graph_url)
     connection = connect_db()
