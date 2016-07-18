@@ -8,7 +8,6 @@ import json
 from mysql.connector import Error #sudo apt-get install python-mysql.connector
 import codecs
 
-
 #password:SK5CTTs8zXV9
 #user:connie_usr_aed
 #base:connie_facebook
@@ -166,7 +165,6 @@ def extract_data_like_post(likes, next_url, connection, id_post):
         except Exception:
             return 1
 
-
 def get_last_id_post(id, connection):
     cursor = get_cursor(connection)
     cursor.execute("SELECT COUNT(id) FROM post WHERE id = (%s)", id)
@@ -176,8 +174,6 @@ def get_last_id_post(id, connection):
         return True
     else:
         return False
-
-
 
 def read_all_post(posts, next_url, connection):
     cursor = get_cursor(connection)
@@ -308,20 +304,14 @@ def getValue(data, attribute1, attribute2):
 
 if __name__ == "__main__":
     codecs.register(lambda name: codecs.lookup('utf8') if name == 'utf8mb4' else None)
-    accessToken = 'EAACEdEose0cBAPoTmEnZARJgCgmbMHfUsMLhwVBZAFMFWA1lZCm9uprXtDYijseT6etL0NwTp8JamuUI2jW2e92ZBljhkBRvZB81K3uBLVNHFV52WHEnazcDyD80kOyfhXnCwlngr5OWaAvTUZAJS3aYEUDZBhd3cDwnzTV74aZAtwZDZD'
+    accessToken = 'EAACEdEose0cBAGdlc7gBq1IqZCwYOFHcBxBJsJERskfZCI6ZAy2A0o7kpVkuXW0MU4pRKCPy2eC4P5PMS1ISKxzkmzRYk7UxQnTtlzIsVVHQOIcBRSWKqUNOArXAsRZAT4Gte34IUA0XhyrWPICFCvHjVSAuSFitMar2VOdiqQZDZD'
     graph_url = "https://graph.facebook.com/2016CopaAmericaCentenario/posts?access_token=" + accessToken
     posts = render_to_json(graph_url)
     connection = connect_db()
-
     #ass = get_last_id_post('612616258840297_791041607664427', connection)
-
     read_all_post(posts, '', connection)
-
-
-
 
 #Use cursor.lastrowid to get the last row ID inserted on the cursor object,
 # or connection.insert_id() to get the ID from the last insert on that connection.
-
 
 #https://graph.facebook.com/cocacolaec/posts?access_token=id
