@@ -26,9 +26,11 @@ def get_cursor(connect):
     return cursor
 
 def insert_post():
-    insert_info = ("INSERT INTO post "
-                   "(id, message, picture, link, name, caption, description, icon, type, status_type, created_time, updated_time, shares)"
-                   "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)")
+    # insert_info = ("INSERT INTO post "
+    #                "(id, message, picture, link, name, caption, description, icon, type, status_type, created_time, updated_time, shares)"
+    #                "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)")
+    insert_info = ()
+
     return insert_info
 
 def insert_post_from():
