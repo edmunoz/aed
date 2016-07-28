@@ -3,7 +3,7 @@ import json
 
 
 
-fileName = "user_arg_euu.csv";
+fileName = "user_colombia_usa.csv";
 fd = open(fileName,mode='w')
 
 
@@ -11,7 +11,7 @@ fd = open(fileName,mode='w')
 client = MongoClient('localhost', 27017)
 db = client['timeLine_db']
 
-cursor = db.user_arg_euu.aggregate([{
+cursor = db.tw_colombia_usa_timeLine.aggregate([{
 	"$group" : { "_id" :"$user.id_str", "count" :{"$sum":1}}
 	}])
 
