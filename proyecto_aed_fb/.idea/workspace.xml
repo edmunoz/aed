@@ -14,7 +14,8 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/proyecto_aed_fb$fb_file.coverage" NAME="fb_file Coverage Results" MODIFIED="1468823619714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_aed_fb$convertir_text.coverage" NAME="convertir_text Coverage Results" MODIFIED="1471939112564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_aed_fb$fb_file.coverage" NAME="fb_file Coverage Results" MODIFIED="1471933888768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proyecto_aed$fb_file.coverage" NAME="fb_file Coverage Results" MODIFIED="1467534925716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -26,21 +27,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fb_file.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fb_file.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fb_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="309" column="0" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
+            <state relative-caret-position="-252">
+              <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
               <folding>
                 <element signature="e#46#88#0" expanded="true" />
-                <element signature="e#866#1172#0" expanded="false" />
-                <marker date="1468849314545" expanded="false" signature="375:617" ph="..." />
-                <marker date="1468849314545" expanded="false" signature="643:841" ph="..." />
-                <marker date="1468849314545" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
-                <marker date="1468849314545" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
-                <marker date="1468849314545" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
-                <marker date="1468849314545" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
-                <marker date="1468849314545" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+                <element signature="e#380#617#0" expanded="false" />
+                <element signature="e#648#841#0" expanded="false" />
+                <element signature="e#2028#4937#0" expanded="false" />
+                <element signature="e#5009#6452#0" expanded="false" />
+                <element signature="e#6496#6721#0" expanded="false" />
+                <element signature="e#11843#11988#0" expanded="false" />
+                <element signature="e#12025#12204#0" expanded="false" />
+                <element signature="e#12254#12453#0" expanded="false" />
+                <marker date="1469257372781" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
+                <marker date="1469257372781" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
+                <marker date="1469257372781" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
+                <marker date="1469257372781" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
+                <marker date="1469257372781" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="convertir_text.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/convertir_text.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+              <folding>
+                <element signature="e#45#282#0" expanded="false" />
+                <element signature="e#313#506#0" expanded="false" />
+                <marker date="1471939105462" expanded="true" signature="563:606" ph="SELECT messa... comment" />
+                <marker date="1471939105462" expanded="true" signature="563:609" ph="SELECT messa... comment" />
+                <marker date="1471939105462" expanded="true" signature="563:805" ph="SELECT messa... comment" />
+                <marker date="1471939105462" expanded="true" signature="879:1001" ph="SELECT id_po... post" />
+                <marker date="1471939105462" expanded="true" signature="879:1021" ph="SELECT id_po... post" />
+                <marker date="1471939105462" expanded="true" signature="879:1106" ph="SELECT id_po... post" />
+                <marker date="1471939105462" expanded="true" signature="1245:1353" ph="SELECT id_po... post" />
+                <marker date="1471939105462" expanded="true" signature="1556:1814" ph="SELECT messa... comment" />
+                <marker date="1471939105462" expanded="true" signature="1838:2084" ph="SELECT messa... comment" />
               </folding>
             </state>
           </provider>
@@ -59,6 +87,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/fb_file.py" />
+        <option value="$PROJECT_DIR$/convertir_text.py" />
       </list>
     </option>
   </component>
@@ -69,10 +98,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="49" />
-    <option name="y" value="-4" />
-    <option name="width" value="1311" />
-    <option name="height" value="772" />
+    <option name="y" value="24" />
+    <option name="width" value="1360" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -99,28 +127,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proyecto_aed_fb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proyecto_aed_fb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proyecto_aed_fb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -130,7 +141,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
   </component>
-  <component name="RunManager" selected="Python.fb_file">
+  <component name="RunManager" selected="Python.convertir_text">
     <configuration default="false" name="fb_file" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -145,6 +156,24 @@
       <module name="proyecto_aed" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fb_file.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="convertir_text" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="proyecto_aed" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/convertir_text.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -357,12 +386,14 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Python.fb_file" />
+      <item index="1" class="java.lang.String" itemvalue="Python.convertir_text" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.fb_file" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.convertir_text" />
+        <item index="1" class="java.lang.String" itemvalue="Python.fb_file" />
       </list>
     </recent_temporary>
   </component>
@@ -383,27 +414,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="-4" width="1311" height="772" extended-state="6" />
+    <frame x="0" y="24" width="1360" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18023716" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18645358" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5564516" sideWeight="0.50608826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32580644" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28709677" sideWeight="0.4939117" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25310558" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5129032" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.85806453" sideWeight="0.4939117" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5419355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5612903" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -424,6 +455,38 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/fb_file.py</url>
+          <line>207</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/fb_file.py</url>
+          <line>218</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/fb_file.py</url>
+          <line>236</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/fb_file.py</url>
+          <line>229</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/fb_file.py</url>
+          <line>259</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/fb_file.py</url>
+          <line>313</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -431,7 +494,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="64" />
+      <option name="time" value="79" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -447,14 +510,19 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#46#88#0" expanded="true" />
-            <element signature="e#866#1172#0" expanded="false" />
-            <marker date="1468849314545" expanded="false" signature="375:617" ph="..." />
-            <marker date="1468849314545" expanded="false" signature="643:841" ph="..." />
-            <marker date="1468849314545" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
-            <marker date="1468849314545" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
-            <marker date="1468849314545" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
-            <marker date="1468849314545" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
-            <marker date="1468849314545" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+            <element signature="e#380#617#0" expanded="false" />
+            <element signature="e#648#841#0" expanded="false" />
+            <element signature="e#2028#4937#0" expanded="false" />
+            <element signature="e#5009#6452#0" expanded="false" />
+            <element signature="e#6496#6721#0" expanded="false" />
+            <element signature="e#11843#11988#0" expanded="false" />
+            <element signature="e#12025#12204#0" expanded="false" />
+            <element signature="e#12254#12453#0" expanded="false" />
+            <marker date="1469257372781" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
+            <marker date="1469257372781" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
+            <marker date="1469257372781" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
+            <marker date="1469257372781" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
+            <marker date="1469257372781" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
           </folding>
         </state>
       </provider>
@@ -465,14 +533,65 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#46#88#0" expanded="true" />
-            <element signature="e#866#1172#0" expanded="false" />
-            <marker date="1468849314545" expanded="false" signature="375:617" ph="..." />
-            <marker date="1468849314545" expanded="false" signature="643:841" ph="..." />
-            <marker date="1468849314545" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
-            <marker date="1468849314545" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
-            <marker date="1468849314545" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
-            <marker date="1468849314545" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
-            <marker date="1468849314545" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+            <element signature="e#380#617#0" expanded="false" />
+            <element signature="e#648#841#0" expanded="false" />
+            <element signature="e#2028#4937#0" expanded="false" />
+            <element signature="e#5009#6452#0" expanded="false" />
+            <element signature="e#6496#6721#0" expanded="false" />
+            <element signature="e#11843#11988#0" expanded="false" />
+            <element signature="e#12025#12204#0" expanded="false" />
+            <element signature="e#12254#12453#0" expanded="false" />
+            <marker date="1469257372781" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
+            <marker date="1469257372781" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
+            <marker date="1469257372781" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
+            <marker date="1469257372781" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
+            <marker date="1469257372781" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fb_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#46#88#0" expanded="true" />
+            <element signature="e#380#617#0" expanded="false" />
+            <element signature="e#648#841#0" expanded="false" />
+            <element signature="e#2028#4937#0" expanded="false" />
+            <element signature="e#5009#6452#0" expanded="false" />
+            <element signature="e#6496#6721#0" expanded="false" />
+            <element signature="e#11843#11988#0" expanded="false" />
+            <element signature="e#12025#12204#0" expanded="false" />
+            <element signature="e#12254#12453#0" expanded="false" />
+            <marker date="1469257372781" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
+            <marker date="1469257372781" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
+            <marker date="1469257372781" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
+            <marker date="1469257372781" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
+            <marker date="1469257372781" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fb_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#46#88#0" expanded="true" />
+            <element signature="e#380#617#0" expanded="false" />
+            <element signature="e#648#841#0" expanded="false" />
+            <element signature="e#2028#4937#0" expanded="false" />
+            <element signature="e#5009#6452#0" expanded="false" />
+            <element signature="e#6496#6721#0" expanded="false" />
+            <element signature="e#11843#11988#0" expanded="false" />
+            <element signature="e#12025#12204#0" expanded="false" />
+            <element signature="e#12254#12453#0" expanded="false" />
+            <marker date="1469257372781" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
+            <marker date="1469257372781" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
+            <marker date="1469257372781" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
+            <marker date="1469257372781" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
+            <marker date="1469257372781" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
           </folding>
         </state>
       </provider>
@@ -483,14 +602,19 @@
           <caret line="176" column="21" selection-start-line="176" selection-start-column="21" selection-end-line="176" selection-end-column="21" />
           <folding>
             <element signature="e#46#88#0" expanded="true" />
-            <element signature="e#866#1172#0" expanded="false" />
-            <marker date="1468849314545" expanded="false" signature="375:617" ph="..." />
-            <marker date="1468849314545" expanded="false" signature="643:841" ph="..." />
-            <marker date="1468849314545" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
-            <marker date="1468849314545" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
-            <marker date="1468849314545" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
-            <marker date="1468849314545" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
-            <marker date="1468849314545" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+            <element signature="e#380#617#0" expanded="false" />
+            <element signature="e#648#841#0" expanded="false" />
+            <element signature="e#2028#4937#0" expanded="false" />
+            <element signature="e#5009#6452#0" expanded="false" />
+            <element signature="e#6496#6721#0" expanded="false" />
+            <element signature="e#11843#11988#0" expanded="false" />
+            <element signature="e#12025#12204#0" expanded="false" />
+            <element signature="e#12254#12453#0" expanded="false" />
+            <marker date="1469257372781" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
+            <marker date="1469257372781" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
+            <marker date="1469257372781" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
+            <marker date="1469257372781" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
+            <marker date="1469257372781" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
           </folding>
         </state>
       </provider>
@@ -501,14 +625,19 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#46#88#0" expanded="true" />
-            <element signature="e#866#1172#0" expanded="false" />
-            <marker date="1468849314545" expanded="false" signature="375:617" ph="..." />
-            <marker date="1468849314545" expanded="false" signature="643:841" ph="..." />
-            <marker date="1468849314545" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
-            <marker date="1468849314545" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
-            <marker date="1468849314545" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
-            <marker date="1468849314545" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
-            <marker date="1468849314545" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+            <element signature="e#380#617#0" expanded="false" />
+            <element signature="e#648#841#0" expanded="false" />
+            <element signature="e#2028#4937#0" expanded="false" />
+            <element signature="e#5009#6452#0" expanded="false" />
+            <element signature="e#6496#6721#0" expanded="false" />
+            <element signature="e#11843#11988#0" expanded="false" />
+            <element signature="e#12025#12204#0" expanded="false" />
+            <element signature="e#12254#12453#0" expanded="false" />
+            <marker date="1469257372781" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
+            <marker date="1469257372781" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
+            <marker date="1469257372781" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
+            <marker date="1469257372781" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
+            <marker date="1469257372781" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
           </folding>
         </state>
       </provider>
@@ -519,14 +648,19 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#46#88#0" expanded="true" />
-            <element signature="e#866#1172#0" expanded="false" />
-            <marker date="1468849314545" expanded="false" signature="375:617" ph="..." />
-            <marker date="1468849314545" expanded="false" signature="643:841" ph="..." />
-            <marker date="1468849314545" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
-            <marker date="1468849314545" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
-            <marker date="1468849314545" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
-            <marker date="1468849314545" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
-            <marker date="1468849314545" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+            <element signature="e#380#617#0" expanded="false" />
+            <element signature="e#648#841#0" expanded="false" />
+            <element signature="e#2028#4937#0" expanded="false" />
+            <element signature="e#5009#6452#0" expanded="false" />
+            <element signature="e#6496#6721#0" expanded="false" />
+            <element signature="e#11843#11988#0" expanded="false" />
+            <element signature="e#12025#12204#0" expanded="false" />
+            <element signature="e#12254#12453#0" expanded="false" />
+            <marker date="1469257372781" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
+            <marker date="1469257372781" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
+            <marker date="1469257372781" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
+            <marker date="1469257372781" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
+            <marker date="1469257372781" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
           </folding>
         </state>
       </provider>
@@ -537,14 +671,19 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#46#88#0" expanded="true" />
-            <element signature="e#866#1172#0" expanded="false" />
-            <marker date="1468849314545" expanded="false" signature="375:617" ph="..." />
-            <marker date="1468849314545" expanded="false" signature="643:841" ph="..." />
-            <marker date="1468849314545" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
-            <marker date="1468849314545" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
-            <marker date="1468849314545" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
-            <marker date="1468849314545" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
-            <marker date="1468849314545" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+            <element signature="e#380#617#0" expanded="false" />
+            <element signature="e#648#841#0" expanded="false" />
+            <element signature="e#2028#4937#0" expanded="false" />
+            <element signature="e#5009#6452#0" expanded="false" />
+            <element signature="e#6496#6721#0" expanded="false" />
+            <element signature="e#11843#11988#0" expanded="false" />
+            <element signature="e#12025#12204#0" expanded="false" />
+            <element signature="e#12254#12453#0" expanded="false" />
+            <marker date="1469257372781" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
+            <marker date="1469257372781" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
+            <marker date="1469257372781" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
+            <marker date="1469257372781" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
+            <marker date="1469257372781" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
           </folding>
         </state>
       </provider>
@@ -555,14 +694,19 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#46#88#0" expanded="true" />
-            <element signature="e#866#1172#0" expanded="false" />
-            <marker date="1468849314545" expanded="false" signature="375:617" ph="..." />
-            <marker date="1468849314545" expanded="false" signature="643:841" ph="..." />
-            <marker date="1468849314545" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
-            <marker date="1468849314545" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
-            <marker date="1468849314545" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
-            <marker date="1468849314545" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
-            <marker date="1468849314545" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+            <element signature="e#380#617#0" expanded="false" />
+            <element signature="e#648#841#0" expanded="false" />
+            <element signature="e#2028#4937#0" expanded="false" />
+            <element signature="e#5009#6452#0" expanded="false" />
+            <element signature="e#6496#6721#0" expanded="false" />
+            <element signature="e#11843#11988#0" expanded="false" />
+            <element signature="e#12025#12204#0" expanded="false" />
+            <element signature="e#12254#12453#0" expanded="false" />
+            <marker date="1469257372781" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
+            <marker date="1469257372781" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
+            <marker date="1469257372781" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
+            <marker date="1469257372781" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
+            <marker date="1469257372781" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
           </folding>
         </state>
       </provider>
@@ -573,14 +717,19 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#46#88#0" expanded="true" />
-            <element signature="e#866#1172#0" expanded="false" />
-            <marker date="1468849314545" expanded="false" signature="375:617" ph="..." />
-            <marker date="1468849314545" expanded="false" signature="643:841" ph="..." />
-            <marker date="1468849314545" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
-            <marker date="1468849314545" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
-            <marker date="1468849314545" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
-            <marker date="1468849314545" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
-            <marker date="1468849314545" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+            <element signature="e#380#617#0" expanded="false" />
+            <element signature="e#648#841#0" expanded="false" />
+            <element signature="e#2028#4937#0" expanded="false" />
+            <element signature="e#5009#6452#0" expanded="false" />
+            <element signature="e#6496#6721#0" expanded="false" />
+            <element signature="e#11843#11988#0" expanded="false" />
+            <element signature="e#12025#12204#0" expanded="false" />
+            <element signature="e#12254#12453#0" expanded="false" />
+            <marker date="1469257372781" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
+            <marker date="1469257372781" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
+            <marker date="1469257372781" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
+            <marker date="1469257372781" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
+            <marker date="1469257372781" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
           </folding>
         </state>
       </provider>
@@ -591,14 +740,19 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#46#88#0" expanded="true" />
-            <element signature="e#866#1172#0" expanded="false" />
-            <marker date="1468849314545" expanded="false" signature="375:617" ph="..." />
-            <marker date="1468849314545" expanded="false" signature="643:841" ph="..." />
-            <marker date="1468849314545" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
-            <marker date="1468849314545" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
-            <marker date="1468849314545" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
-            <marker date="1468849314545" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
-            <marker date="1468849314545" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+            <element signature="e#380#617#0" expanded="false" />
+            <element signature="e#648#841#0" expanded="false" />
+            <element signature="e#2028#4937#0" expanded="false" />
+            <element signature="e#5009#6452#0" expanded="false" />
+            <element signature="e#6496#6721#0" expanded="false" />
+            <element signature="e#11843#11988#0" expanded="false" />
+            <element signature="e#12025#12204#0" expanded="false" />
+            <element signature="e#12254#12453#0" expanded="false" />
+            <marker date="1469257372781" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
+            <marker date="1469257372781" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
+            <marker date="1469257372781" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
+            <marker date="1469257372781" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
+            <marker date="1469257372781" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
           </folding>
         </state>
       </provider>
@@ -609,14 +763,19 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#46#88#0" expanded="true" />
-            <element signature="e#866#1172#0" expanded="false" />
-            <marker date="1468849314545" expanded="false" signature="375:617" ph="..." />
-            <marker date="1468849314545" expanded="false" signature="643:841" ph="..." />
-            <marker date="1468849314545" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
-            <marker date="1468849314545" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
-            <marker date="1468849314545" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
-            <marker date="1468849314545" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
-            <marker date="1468849314545" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+            <element signature="e#380#617#0" expanded="false" />
+            <element signature="e#648#841#0" expanded="false" />
+            <element signature="e#2028#4937#0" expanded="false" />
+            <element signature="e#5009#6452#0" expanded="false" />
+            <element signature="e#6496#6721#0" expanded="false" />
+            <element signature="e#11843#11988#0" expanded="false" />
+            <element signature="e#12025#12204#0" expanded="false" />
+            <element signature="e#12254#12453#0" expanded="false" />
+            <marker date="1469257372781" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
+            <marker date="1469257372781" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
+            <marker date="1469257372781" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
+            <marker date="1469257372781" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
+            <marker date="1469257372781" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
           </folding>
         </state>
       </provider>
@@ -627,14 +786,19 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#46#88#0" expanded="true" />
-            <element signature="e#866#1172#0" expanded="false" />
-            <marker date="1468849314545" expanded="false" signature="375:617" ph="..." />
-            <marker date="1468849314545" expanded="false" signature="643:841" ph="..." />
-            <marker date="1468849314545" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
-            <marker date="1468849314545" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
-            <marker date="1468849314545" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
-            <marker date="1468849314545" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
-            <marker date="1468849314545" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+            <element signature="e#380#617#0" expanded="false" />
+            <element signature="e#648#841#0" expanded="false" />
+            <element signature="e#2028#4937#0" expanded="false" />
+            <element signature="e#5009#6452#0" expanded="false" />
+            <element signature="e#6496#6721#0" expanded="false" />
+            <element signature="e#11843#11988#0" expanded="false" />
+            <element signature="e#12025#12204#0" expanded="false" />
+            <element signature="e#12254#12453#0" expanded="false" />
+            <marker date="1469257372781" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
+            <marker date="1469257372781" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
+            <marker date="1469257372781" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
+            <marker date="1469257372781" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
+            <marker date="1469257372781" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
           </folding>
         </state>
       </provider>
@@ -645,14 +809,19 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#46#88#0" expanded="true" />
-            <element signature="e#866#1172#0" expanded="false" />
-            <marker date="1468849314545" expanded="false" signature="375:617" ph="..." />
-            <marker date="1468849314545" expanded="false" signature="643:841" ph="..." />
-            <marker date="1468849314545" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
-            <marker date="1468849314545" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
-            <marker date="1468849314545" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
-            <marker date="1468849314545" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
-            <marker date="1468849314545" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+            <element signature="e#380#617#0" expanded="false" />
+            <element signature="e#648#841#0" expanded="false" />
+            <element signature="e#2028#4937#0" expanded="false" />
+            <element signature="e#5009#6452#0" expanded="false" />
+            <element signature="e#6496#6721#0" expanded="false" />
+            <element signature="e#11843#11988#0" expanded="false" />
+            <element signature="e#12025#12204#0" expanded="false" />
+            <element signature="e#12254#12453#0" expanded="false" />
+            <marker date="1469257372781" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
+            <marker date="1469257372781" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
+            <marker date="1469257372781" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
+            <marker date="1469257372781" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
+            <marker date="1469257372781" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
           </folding>
         </state>
       </provider>
@@ -672,20 +841,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/fbpandas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/post1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fb_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="309" column="0" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
+        <state relative-caret-position="-252">
+          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
           <folding>
             <element signature="e#46#88#0" expanded="true" />
-            <element signature="e#866#1172#0" expanded="false" />
-            <marker date="1468849314545" expanded="false" signature="375:617" ph="..." />
-            <marker date="1468849314545" expanded="false" signature="643:841" ph="..." />
-            <marker date="1468849314545" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
-            <marker date="1468849314545" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
-            <marker date="1468849314545" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
-            <marker date="1468849314545" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
-            <marker date="1468849314545" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+            <element signature="e#380#617#0" expanded="false" />
+            <element signature="e#648#841#0" expanded="false" />
+            <element signature="e#2028#4937#0" expanded="false" />
+            <element signature="e#5009#6452#0" expanded="false" />
+            <element signature="e#6496#6721#0" expanded="false" />
+            <element signature="e#11843#11988#0" expanded="false" />
+            <element signature="e#12025#12204#0" expanded="false" />
+            <element signature="e#12254#12453#0" expanded="false" />
+            <marker date="1469257372781" expanded="true" signature="1218:1336" ph="INSERT INTO post_from... " />
+            <marker date="1469257372781" expanded="true" signature="1407:1511" ph="INSERT INTO post_like... " />
+            <marker date="1469257372781" expanded="true" signature="1580:1750" ph="INSERT INTO comment... " />
+            <marker date="1469257372781" expanded="true" signature="1824:1934" ph="INSERT INTO comment_from... " />
+            <marker date="1469257372781" expanded="true" signature="6548:6590" ph="SELECT COUNT... post" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/convertir_text.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding>
+            <element signature="e#45#282#0" expanded="false" />
+            <element signature="e#313#506#0" expanded="false" />
+            <marker date="1471939105462" expanded="true" signature="563:606" ph="SELECT messa... comment" />
+            <marker date="1471939105462" expanded="true" signature="563:609" ph="SELECT messa... comment" />
+            <marker date="1471939105462" expanded="true" signature="563:805" ph="SELECT messa... comment" />
+            <marker date="1471939105462" expanded="true" signature="879:1001" ph="SELECT id_po... post" />
+            <marker date="1471939105462" expanded="true" signature="879:1021" ph="SELECT id_po... post" />
+            <marker date="1471939105462" expanded="true" signature="879:1106" ph="SELECT id_po... post" />
+            <marker date="1471939105462" expanded="true" signature="1245:1353" ph="SELECT id_po... post" />
+            <marker date="1471939105462" expanded="true" signature="1556:1814" ph="SELECT messa... comment" />
+            <marker date="1471939105462" expanded="true" signature="1838:2084" ph="SELECT messa... comment" />
           </folding>
         </state>
       </provider>
