@@ -306,7 +306,7 @@ def getValue(data, attribute1, attribute2):
 
 if __name__ == "__main__":
     codecs.register(lambda name: codecs.lookup('utf8') if name == 'utf8mb4' else None)
-    accessToken = 'EAACEdEose0cBAGdlc7gBq1IqZCwYOFHcBxBJsJERskfZCI6ZAy2A0o7kpVkuXW0MU4pRKCPy2eC4P5PMS1ISKxzkmzRYk7UxQnTtlzIsVVHQOIcBRSWKqUNOArXAsRZAT4Gte34IUA0XhyrWPICFCvHjVSAuSFitMar2VOdiqQZDZD'
+    accessToken = 'EAACEdEose0cBAKoZBSES1UanaVdRMIZBEQCVswbFjIlxaYlZBWPfK3ZBsXpEwgKcOq8JqDghvaZAp52cyzorRlW5Nv3RqFNMPdlx4pmJsEttSdydDxVtnAA3d1meMPQZBwVVQNLd25zlejj5hdA9XZBFDKawumYZAhYIpkjqFdeuZBQZDZD'
     graph_url = "https://graph.facebook.com/2016CopaAmericaCentenario/posts?access_token=" + accessToken
     posts = render_to_json(graph_url)
     connection = connect_db()

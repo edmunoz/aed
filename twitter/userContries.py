@@ -1,22 +1,36 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 from geopy.geocoders import Nominatim
-file_name_in="../dataset/tw_chile_argentina_final_timeLine.csv"
-file_name_out="../dataset/tw_chile_argentina_final_timeLine_country.csv"
-df = pd.read_csv(file_name_in)
+import sys
+from pymongo import *
+from TweetParser import *
+from FileWorker import *
+import json
 
-def getContry(x):
-	geolocator = Nominatim()
-	print str(x['lat']) +' ,' + str(x['lng'])
-	try:
-		location = geolocator.reverse(str(x['lat'])+","+str(x['lng']),timeout=10)
-		print location.raw['address']['country']
-		return location.raw['address']['country']
-	except GeocoderTimedOut as e:
-		print("Error: geocode failed on input %s with message %s"%(my_address, e.msg))
-		return None
 
-	
-df['country']=df.apply(getContry ,axis=1)
-df.to_csv(file_name_out, sep=',')
+client = MongoClient('localhost', 27017)
+db = client['timeLine_db']
+collection = db['tw_chile_argentina_final_timeLine']
+tweet_parser = TweetParser(fields = ['id','created_at','text'],mentionsFlag = False,
+			hashtagsFlag = False,urlsFlag=False,userFlag=True,coordinatesFlag=True,placeFlag=False)
+
+tweets_iterator = collection.find()
+
+cont = 0
+for rawTweet in tweets_iterator:
+	tweet = tweet_parser.parse(rawTweet)
+	cont +=1;
+	print cont
+	if tweet["coordinates"] and not ("country" in rawTweet):
+		print rawTweet["_id"]
+		geolocator = Nominatim()
+		try:
+			location = geolocator.reverse(str(tweet["coordinates"]['latitud'])+","+str(tweet["coordinates"]['longitud']),timeout=50)
+			print location.raw['address']['country']
+			collection.update(
+			   { "_id": rawTweet["_id"] },
+			   { "$set": { "country":  location.raw['address']['country']} }
+			)
+		except Exception as e:
+			print "error"
+		#print tweet
+		line = "%s,%s,%s,%.4f,%.4f,%s"%(tweet['user']['id'], tweet['id'],tweet['created_at'], tweet["coordinates"]['latitud'], tweet["coordinates"]['longitud'], tweet['text'])
+print "Fin"
