@@ -13,7 +13,7 @@ partition = community.best_partition(G)
 size = float(len(set(partition.values())))
 pos = nx.spring_layout(G)
 count = 0.
-for com in set(partition.values()) :
+for com in set(partition.values()):
     count = count + 1.
     list_nodes = [nodes for nodes in partition.keys()
                                 if partition[nodes] == com]
