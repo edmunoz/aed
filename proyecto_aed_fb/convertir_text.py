@@ -22,10 +22,19 @@ def get_post(inicio, fin):
     return query_post
 
 if __name__ == '__main__':
+    '''
+    inicio = '2016-06-17T01:22:44+0000' fin = '2016-06-17T04:01:30+0000'#EEUU_VS_Ecuador
+    inicio = '2016-06-17T23:42:20+0000' fin = '2016-06-18T02:55:17+0000'#Colombia_VS_Peru
+    inicio = '2016-06-19T01:26:00+0000' fin = '2016-06-19T04:23:23+0000'#Mexico_VS_Chile
+    inicio = '2016-06-22T02:02:20+0000' fin = '2016-06-22T04:20:43+0000'#EEUU_VS_Argentina
+    inicio = '2016-06-22T23:40:45+0000' fin = '2016-06-23T05:12:30+0000'#Chile_VS_Colombia
+    inicio = '2016-06-26T00:24:34+0000' fin = '2016-06-26T03:50:36+0000'#EEUU_VS_Colombia
+    inicio = '2016-06-26T23:24:26+0000' fin = '2016-06-27T05:42:49+0000'#Argentina_VS_Chile
+    '''
+    inicio = '2016-06-17T01:22:44+0000'
+    fin = '2016-06-17T04:01:30+0000'  # EEUU_VS_Ecuador
     connection = connect_db()
     cursor = get_cursor(connection)
-
-
     query_post = "SELECT id_post, message AS POSTS FROM post WHERE STR_TO_DATE(created_time, '%Y-%m-%dT%H:%i:%s+0000') BETWEEN "
     query_post2 = "STR_TO_DATE('2016-06-17T01:22:44+0000', '%Y-%m-%dT%H:%i:%s+0000') AND "
     query_post3 = "STR_TO_DATE('2016-06-17T04:01:30+0000', '%Y-%m-%dT%H:%i:%s+0000');"
@@ -39,17 +48,17 @@ if __name__ == '__main__':
     count = 0
     for post in posts:
         count = count + 1
-        name = "post" + str(count) + ".txt"
+        name = "community" + str(count) + ".txt"
         f = open(name, 'w')
         id_post = post[0]
         message = post[1]
         f.write(message+'\n')
         relation = (id_post)
-        cursor.execute(get_comment(id_post, inicio, fin))
-        comments = cursor.fetchall()
-        for comment in comments:
-            c_message = comment[0]
-            f.write(c_message + '\n')
+        #cursor.execute(get_comment(id_post, inicio, fin))
+        #comments = cursor.fetchall()
+        #for comment in comments:
+            #c_message = comment[0]
+            #f.write(c_message + '\n')
     f.close()
 
 
