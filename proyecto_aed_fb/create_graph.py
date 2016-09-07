@@ -30,6 +30,12 @@ def get_communities(partition, list_posts):
             if value == item:
                 print "Escriir"
 
+def get_top_keys(dictionary, top):
+    items = dictionary.items()
+    items.sort(reverse=True, key=lambda x: x[1])
+    return map(lambda x: x[0], items[:top])
+
+
 if __name__ == '__main__':
     '''
     inicio = '2016-06-17T01:22:44+0000' fin = '2016-06-17T04:01:30+0000'#EEUU_VS_Ecuador
@@ -67,26 +73,32 @@ if __name__ == '__main__':
             #my_edges.append(valor)
             grafo.add_node(id_user)
             grafo.add_edge(id_post, id_user)
-        #if parada == 100:
-        #    break
+        #if parada == 5:
+         #   break
     #nx.draw(grafo)
     #pos = nx.spring_layout(grafo)
     #nx.draw_networkx_nodes(grafo, pos, nodelist=list_posts, node_color='r')
     #nx.draw_networkx_nodes(grafo, pos, nodelist=list_comments, node_color='c')
     #nx.draw_networkx_edges(grafo, pos, edgelist=my_edges, edge_color='r')
+
+    bet_cen = nx.betweenness_centrality(grafo)
+    top_bet_cen = get_top_keys(bet_cen, 10)
+
     parts = community.best_partition(grafo)
     values = [parts.get(node) for node in grafo.nodes()]
     nx.draw_spring(grafo, node_color=values, with_labels=False)
+    print nx.info(grafo)
+    print top_bet_cen
+    plt.axis('off')
+    plt.show()
+
     '''
+
     for item in list_posts:
         ssss = parts[item]
         for key, value in parts.items():
             if value == ssss:
-                print "Escriir"'''
+                print "Escriir"
 
-
-
-    print nx.info(grafo)
-    plt.axis('off')
-    plt.show()
+'''
 

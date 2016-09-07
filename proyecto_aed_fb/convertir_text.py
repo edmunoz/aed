@@ -31,18 +31,12 @@ if __name__ == '__main__':
     inicio = '2016-06-26T00:24:34+0000' fin = '2016-06-26T03:50:36+0000'#EEUU_VS_Colombia
     inicio = '2016-06-26T23:24:26+0000' fin = '2016-06-27T05:42:49+0000'#Argentina_VS_Chile
     '''
-    inicio = '2016-06-17T01:22:44+0000'
-    fin = '2016-06-17T04:01:30+0000'  # EEUU_VS_Ecuador
+    inicio = '2016-06-26T23:24:26+0000'
+    fin = '2016-06-27T05:42:49+0000'  # Argentina_VS_Chile
+
+
     connection = connect_db()
     cursor = get_cursor(connection)
-    query_post = "SELECT id_post, message AS POSTS FROM post WHERE STR_TO_DATE(created_time, '%Y-%m-%dT%H:%i:%s+0000') BETWEEN "
-    query_post2 = "STR_TO_DATE('2016-06-17T01:22:44+0000', '%Y-%m-%dT%H:%i:%s+0000') AND "
-    query_post3 = "STR_TO_DATE('2016-06-17T04:01:30+0000', '%Y-%m-%dT%H:%i:%s+0000');"
-    #query_comment = "SELECT message AS COMMENTS FROM comment WHERE id_post = %s AND STR_TO_DATE(created_time, '%Y-%m-%dT%H:%i:%s+0000') BETWEEN STR_TO_DATE('2016-06-17T01:22:44+0000', '%Y-%m-%dT%H:%i:%s+0000') AND STR_TO_DATE('2016-06-17T04:01:30+0000', '%Y-%m-%dT%H:%i:%s+0000');"
-    query_comment = "SELECT message FROM comment WHERE id_post = %d AND STR_TO_DATE(created_time, '%Y-%m-%dT%H:%i:%s+0000') BETWEEN STR_TO_DATE('2016-06-17T01:22:44+0000', '%Y-%m-%dT%H:%i:%s+0000') AND STR_TO_DATE('2016-06-17T04:01:30+0000', '%Y-%m-%dT%H:%i:%s+0000');"
-
-    inicio = '2016-06-26T00:24:34+0000'
-    fin = '2016-06-26T03:50:36+0000'
     cursor.execute(get_post(inicio, fin))
     posts = cursor.fetchall()
     count = 0
